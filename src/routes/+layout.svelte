@@ -4,4 +4,12 @@
   import '../styles/slides.css'
 </script>
 
-<slot />
+<main>
+  <slot />
+</main>
+
+<style>
+  main {
+    padding: 2rem 4rem;
+  }
+</style>
