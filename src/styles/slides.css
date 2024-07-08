@@ -62,6 +62,10 @@ h2 {
   }
 }
 
+.slide {
+  margin: 4rem;
+}
+
 code {
   font-family: 'fira code', monospace;
   font-feature-settings: 'calt';

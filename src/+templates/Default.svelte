@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Slide } from '$lib/slide'
+  import '../styles/slides.css'
 
   import SvelteMarkdown from 'svelte-markdown'
 
@@ -11,24 +12,26 @@
   )
 </script>
 
-{#if h1}
-  <h1><SvelteMarkdown source={h1} isInline /></h1>
-{/if}
-{#if h2}
-  <h2 class:h2-only={!h1}><SvelteMarkdown source={h2} isInline /></h2>
-{/if}
-{#each paragraphs as { text, style = { } }}
-  {#if text === ''}
-    <br />
+<div class="slide">
+  {#if h1}
+    <h1><SvelteMarkdown source={h1} isInline /></h1>
   {/if}
-  <p
-    style={Object.entries(style)
-      .map(([property, style]) => `${property}: ${style}`)
-      .join('; ')}
-  >
-    <SvelteMarkdown source={text} isInline />
-  </p>
-{/each}
+  {#if h2}
+    <h2 class:h2-only={!h1}><SvelteMarkdown source={h2} isInline /></h2>
+  {/if}
+  {#each paragraphs as { text, style = { } }}
+    {#if text === ''}
+      <br />
+    {/if}
+    <p
+      style={Object.entries(style)
+        .map(([property, style]) => `${property}: ${style}`)
+        .join('; ')}
+    >
+      <SvelteMarkdown source={text} isInline />
+    </p>
+  {/each}
+</div>
 
 <style>
   p {

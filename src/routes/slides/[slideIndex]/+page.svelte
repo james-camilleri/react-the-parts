@@ -136,6 +136,6 @@
 
   .connect-url {
     font-family: monospace;
-    font-size: 1rem;
+    font-size: 16px;
   }
 </style>
