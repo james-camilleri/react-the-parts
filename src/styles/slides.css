@@ -63,6 +63,7 @@ h2 {
 }
 
 .slide {
+  position: fixed;
   margin: 4rem;
 }
 

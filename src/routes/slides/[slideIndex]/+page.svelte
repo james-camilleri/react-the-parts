@@ -2,6 +2,18 @@
   import type { PageData } from './$types'
 
   import { qr } from '@svelte-put/qr/svg'
+  import {
+    backIn,
+    bounceIn,
+    cubicIn,
+    cubicOut,
+    elasticIn,
+    quadIn,
+    quintIn,
+    quintOut,
+    sineIn,
+  } from 'svelte/easing'
+  import { fade, blur, fly, slide, scale, crossfade } from 'svelte/transition'
 
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
@@ -100,7 +112,11 @@
   </div>
 {/if}
 
-<svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
+{#key data.slideIndex}
+  <div in:scale out:fade={{ easing: quintOut }}>
+    <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
+  </div>
+{/key}
 <Background currentSlideIndex={data.slideIndex} {...currentSlide} />
 
 <div class="iframe-preload">
