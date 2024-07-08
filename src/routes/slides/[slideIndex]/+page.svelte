@@ -39,7 +39,6 @@
   }
 
   function onKeyPress(e: KeyboardEvent) {
-    console.log(e.key)
     if (e.key === 'ArrowRight') {
       return nextSlide()
     }
