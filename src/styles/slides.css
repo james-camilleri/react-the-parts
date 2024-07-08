@@ -1,8 +1,83 @@
 :root {
   --white: rgb(255 255 255);
+  --light: rgb(240 240 255);
+  --black: rgb(0 0 0);
+  --dark: rgb(20 20 20);
+
   --react-blue: rgb(88 196 220);
   --light-blue: rgb(0 200 255);
   --dark-blue: rgb(11 109 145);
-  --dark: rgb(20 20 20);
-  --black: rgb(0 0 0);
+
+  --title-margin: 2rem;
+}
+
+html {
+  font-family: trispace, sans-serif;
+  font-size: 36px;
+  font-variation-settings: 'wdth' 82;
+  font-weight: 450;
+}
+
+h1 {
+  margin: 0 0 var(--title-margin);
+  font-size: 4rem;
+  font-variation-settings: 'wdth' 60;
+  font-weight: 800;
+  line-height: 1;
+  filter: drop-shadow(0.2rem 0.1rem 0 var(--light));
+}
+
+h2 {
+  position: relative;
+  top: -1.5rem;
+  display: inline;
+  margin-inline-start: 0.5rem;
+  font-size: 0.8rem;
+  font-variation-settings: 'wdth' 100;
+  font-weight: 300;
+
+  &::after {
+    position: absolute;
+    top: -0.5em;
+    left: -0.5em;
+    z-index: -1;
+    display: block;
+    width: calc(100% + 1em);
+    height: calc(100% + 1em);
+    content: '';
+    background: var(--light);
+  }
+
+  &::before {
+    position: absolute;
+    top: -0.25em;
+    left: -0.25em;
+    z-index: -1;
+    display: block;
+    width: calc(100% + 1.05em);
+    height: calc(100% + 1.05em);
+    content: '';
+    background: var(--dark);
+    opacity: 0.7;
+  }
+}
+
+code {
+  font-family: 'fira code', monospace;
+  font-feature-settings: 'calt';
+  font-variant-ligatures: contextual;
+  color: var(--dark-blue);
+}
+
+@font-face {
+  font-family: trispace;
+  font-weight: 100 800;
+  src: url('/trispace.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'fira code';
+  src: url('/fira-code.woff2') format('woff2');
+  font-display: swap;
 }

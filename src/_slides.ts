@@ -27,6 +27,10 @@ const slides: Slide[] = [
       'A few tips and tricks',
     ],
   },
+  {
+    h2: 'Just a subtitle',
+    text: 'with some stuff',
+  },
 ]
 
 export default slides

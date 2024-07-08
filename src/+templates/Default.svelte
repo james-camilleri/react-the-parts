@@ -24,4 +24,8 @@
   p {
     margin: 0;
   }
+
+  .h2-only {
+    margin-inline-start: 0;
+  }
 </style>
