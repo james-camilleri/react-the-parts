@@ -1,13 +1,17 @@
-export default [
+import type { Slide } from '$lib/slide'
+
+const slides: Slide[] = [
   {
-    title: 'Slide 1',
+    h1: 'Slide 1',
     notes: ['a note', 'another note', 'a note with *formatting*'],
   },
   {
-    title: 'Slide 2',
+    h1: 'Slide 2',
     notes: ['a single note on slide 2'],
   },
   {
-    title: 'Slide 3',
+    h1: 'Slide 3',
   },
 ]
+
+export default slides

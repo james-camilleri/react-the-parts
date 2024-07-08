@@ -8,6 +8,7 @@
   // TODO: This file should probably be moved somewhere else, or rethought entirely.
   import { remote } from '$lib/remote.svelte'
 
+  import Background from '../../../+components/_background_svelte_5/Background.svelte'
   import { resolveTemplate } from '../../../+templates'
   import slides from '../../../_slides'
 
@@ -99,9 +100,8 @@
   </div>
 {/if}
 
-{#key data.slideIndex}
-  <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
-{/key}
+<svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
+<Background currentSlideIndex={data.slideIndex} {...currentSlide} />
 
 <style>
   .overlay {

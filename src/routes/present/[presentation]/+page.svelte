@@ -6,6 +6,7 @@
 
   import { remote } from '$lib/remote.svelte'
 
+  import Background from '../../../+components/_background_svelte_5/Background.svelte'
   import { resolveTemplate } from '../../../+templates'
   import slides from '../../../_slides'
 
@@ -48,9 +49,8 @@
     <button class="next" onclick={nextSlide}>Next &gt;</button>
   </div>
   <div class="preview">
-    {#key currentSlideIndex}
-      <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
-    {/key}
+    <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
+    <Background {currentSlideIndex} {...currentSlide} />
   </div>
 </div>
 
