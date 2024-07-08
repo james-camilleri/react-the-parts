@@ -4,7 +4,11 @@
   import SvelteMarkdown from 'svelte-markdown'
 
   let { h1, h2, text }: Slide = $props()
-  let paragraphs = $derived(Array.isArray(text) ? text : text ? [text] : [])
+  let paragraphs = $derived(
+    (Array.isArray(text) ? text : text ? [text] : []).map((text) =>
+      typeof text === 'string' ? { text } : text,
+    ),
+  )
 </script>
 
 {#if h1}
@@ -13,11 +17,17 @@
 {#if h2}
   <h2 class:h2-only={!h1}><SvelteMarkdown source={h2} isInline /></h2>
 {/if}
-{#each paragraphs as paragraph}
-  {#if paragraph === ''}
+{#each paragraphs as { text, style = { } }}
+  {#if text === ''}
     <br />
   {/if}
-  <p><SvelteMarkdown source={paragraph} isInline /></p>
+  <p
+    style={Object.entries(style)
+      .map(([property, style]) => `${property}: ${style}`)
+      .join('; ')}
+  >
+    <SvelteMarkdown source={text} isInline />
+  </p>
 {/each}
 
 <style>

@@ -28,8 +28,23 @@ const slides: Slide[] = [
     ],
   },
   {
-    h2: 'Just a subtitle',
-    text: 'with some stuff',
+    h1: 'What???',
+    h2: 'In the ever-loving **#@*!** is React?',
+    text: [
+      {
+        text: 'A front-end *library** for building user interfaces out of individual bits called components.',
+        style: {
+          'font-size': '2em',
+          'line-height': '1.2',
+          'max-width': '65vw',
+          'margin-top': '1rem',
+        },
+      },
+      {
+        text: '*not framework',
+        style: { 'margin-top': '1rem' },
+      },
+    ],
   },
 ]
 
