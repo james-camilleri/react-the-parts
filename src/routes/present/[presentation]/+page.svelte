@@ -86,4 +86,9 @@
     width: 100%;
     aspect-ratio: 16 / 9;
   }
+
+  :global(html) {
+    /* Override base font size in previews. */
+    font-size: 12px !important;
+  }
 </style>
