@@ -103,6 +103,14 @@
 <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
 <Background currentSlideIndex={data.slideIndex} {...currentSlide} />
 
+<div class="iframe-preload">
+  {#each slides as slide}
+    {#if slide.iframe}
+      <iframe title="preload: {slide.iframe}" src={slide.iframe}></iframe>
+    {/if}
+  {/each}
+</div>
+
 <style>
   .overlay {
     position: fixed;
@@ -137,5 +145,9 @@
   .connect-url {
     font-family: monospace;
     font-size: 16px;
+  }
+
+  .iframe-preload {
+    display: none;
   }
 </style>
