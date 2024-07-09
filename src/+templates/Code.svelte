@@ -46,10 +46,11 @@
 
   :global(pre) {
     width: 100%;
+    margin: 0;
     overflow-x: hidden;
+    background-color: transparent !important;
     scrollbar-width: thin;
     scrollbar-color: var(--react-blue);
-    background-color: transparent !important;
   }
 
   :global(code) {

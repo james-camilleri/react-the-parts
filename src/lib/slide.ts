@@ -10,7 +10,7 @@ export interface Slide {
   text?: Text | Text[]
   code?: {
     source: string
-    language: 'js' | 'ts'
+    language: 'js' | 'ts' | 'html' | 'jsx' | 'tsx'
   }
   notes?: string[]
   iframe?: string
