@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { T } from '@threlte/core'
+  import { T, useTask } from '@threlte/core'
   import { tweened } from 'svelte/motion'
 
   import { SeededRandom } from '$lib/random'
@@ -53,13 +53,14 @@
   })
 </script>
 
-<T.PerspectiveCamera
+<!-- TODO: This also seems to be broken. -->
+<!-- <T.PerspectiveCamera
   makeDefault
   position={[0, 0, -30]}
   on:create={({ ref }) => {
     ref.lookAt(0, 0, 0)
   }}
-/>
+/> -->
 
 {#each shapes as { distance, angle, rotationSpeedX, rotationSpeedY, rotationSpeedZ, geometry }}
   <Shape {distance} {angle} {rotationSpeedX} {rotationSpeedY} {rotationSpeedZ} {geometry} {dark} />

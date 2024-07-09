@@ -59,13 +59,12 @@
     {/each}
   </svg>
 
-  <!-- TODO: This is blowing up horrifically. -->
-  <!-- <div class="canvas" class:hidden={currentSlideIndex && HIDE_SHAPES.has(currentSlideIndex)}>
+  <div class="canvas" class:hidden={currentSlideIndex && HIDE_SHAPES.has(currentSlideIndex)}>
     <Canvas>
       <Shapes {dark} {random} />
       <Particles />
     </Canvas>
-  </div> -->
+  </div>
 </div>
 
 <style lang="css">

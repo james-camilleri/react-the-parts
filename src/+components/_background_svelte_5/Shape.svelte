@@ -19,7 +19,7 @@
     rotationSpeedX,
     rotationSpeedY,
     rotationSpeedZ,
-    geometry,
+    // geometry,
     dark,
   }: ShapeProps = $props()
 
@@ -54,7 +54,9 @@
   rotation.y={rotationY}
   rotation.z={rotationZ}
 >
-  <svelte:component this={geometry} />
+  <T.DodecahedronGeometry />
+  <!-- TODO: This binding doesn't work. -->
+  <!-- <svelte:component this={geometry} /> -->
   <T.MeshStandardMaterial wireframe color="#fff" />
 </T.Mesh>
 
@@ -67,6 +69,7 @@
   rotation.y={rotationY}
   rotation.z={rotationZ}
 >
-  <svelte:component this={geometry} />
+  <T.DodecahedronGeometry />
+  <!-- TODO: This binding doesn't work. -->
   <T.MeshStandardMaterial color={colour} />
 </T.Mesh>
