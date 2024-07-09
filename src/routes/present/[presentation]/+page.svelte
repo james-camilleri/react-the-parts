@@ -49,7 +49,10 @@
     <button class="next" onclick={nextSlide}>Next &gt;</button>
   </div>
   <div class="preview">
-    <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
+    <!-- Don't render iframes because the blow up the remote. -->
+    {#if !currentSlide.iframe}
+      <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
+    {/if}
     <Background {currentSlideIndex} {...currentSlide} />
   </div>
 </div>
