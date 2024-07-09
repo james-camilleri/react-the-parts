@@ -67,6 +67,7 @@
 
   .notes {
     padding: 1rem 2rem;
+    overflow-y: auto;
     font-family: sans-serif;
     font-size: 2rem;
     color: var(--interface-light);
@@ -76,7 +77,7 @@
   .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 10vh;
+    height: 20vh;
 
     button {
       font-size: 1.5rem;
