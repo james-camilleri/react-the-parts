@@ -1,8 +1,10 @@
 import type { Slide } from '$lib/slide'
 
 import JQuerySample from '$assets/code/jquery-sample.js?raw'
+import LoopingWithJsx from '$assets/code/jsx-looping-through-components.jsx?raw'
 import KnockoutComponent from '$assets/code/knockout-component.html?raw'
-import ReactComponent from '$assets/code/react-component.jsx?raw'
+import ReactClassComponent from '$assets/code/react-class-component.jsx?raw'
+import ReactFunctionalComponent from '$assets/code/react-components.jsx?raw'
 import VueComponent from '$assets/code/vue-component.html?raw'
 import ReactLogo from '$assets/components/ReactLogo.svelte'
 import AllJavaScript from '$assets/images/all-javascript.jpg'
@@ -11,6 +13,7 @@ import AstroLogo from '$assets/images/astro-logo.png'
 import BackboneJsLogo from '$assets/images/backbone-js-logo.png'
 import BrowserWars from '$assets/images/browser-wars.png'
 import CircleVsSpiral from '$assets/images/circle-vs-spiral.png'
+import ComponentTree from '$assets/images/component-tree.webp'
 import HighlightJsxComment from '$assets/images/highlight-js-jsx-comment.png'
 import JavaScriptAndNetscape from '$assets/images/javascript+netscape.png'
 import JQuery from '$assets/images/jquery-logo.png'
@@ -18,6 +21,9 @@ import KnockoutJsLogo from '$assets/images/knockout-js-logo.svg'
 import MPA from '$assets/images/mpa.svg'
 import NuxtLogo from '$assets/images/nuxt-logo.svg'
 import QwikLogo from '$assets/images/qwik-logo.svg'
+import ReactComponentOutline from '$assets/images/react-component-outline.png'
+import ReactDevTools from '$assets/images/react-dev-tools.png'
+import ReactHookLint from '$assets/images/react-hook-lint.png'
 import RemixLogo from '$assets/images/remix-logo.svg'
 import SignalsLogo from '$assets/images/signals-logo.svg'
 import SirTimCreatesTheWeb from '$assets/images/sir-tim-creates-the-web.jpeg'
@@ -191,9 +197,30 @@ const slides: Slide[] = [
   },
   {
     h2: 'Components',
-    text: '**Everything** is a component.',
-    notes: ['Earlier frameworks had "optional" components.', 'React was components or GTFO.'],
+    image: ReactComponentOutline,
+    notes: [
+      'Earlier frameworks had "optional" components.',
+      'React was components or GTFO.',
+      'A React app is a hierarchical tree of components (classes or functions).',
+    ],
   },
+  {
+    h2: 'Internally, a React app is a giant tree',
+    image: ComponentTree,
+  },
+  {
+    code: {
+      source: ReactFunctionalComponent,
+      language: 'jsx',
+    },
+  },
+  {
+    code: {
+      source: ReactClassComponent,
+      language: 'jsx',
+    },
+  },
+
   {
     h2: 'JSX',
     image: AllJavaScript,
@@ -216,7 +243,7 @@ const slides: Slide[] = [
   },
   {
     code: {
-      source: ReactComponent,
+      source: LoopingWithJsx,
       language: 'jsx',
     },
   },
@@ -226,14 +253,47 @@ const slides: Slide[] = [
       'Side note: something I came across while I was trying to get syntax highlighting to work',
     ],
   },
+  {
+    iframe: 'https://react.dev/learn/writing-markup-with-jsx#3-camelcase-salls-most-of-the-things',
+    notes: ['Weird JSX things'],
+  },
+
+  // Tips & tricks.
+  {
+    h1: 'Tips and Tricks',
+    h2: 'Steel-toed boots for footgun protection.',
+  },
+  {
+    text: [
+      {
+        text: "Don't write React.",
+        style: {
+          'font-size': '2.5rem',
+          'font-weight': 'bold',
+        },
+      },
+      '(ha ha)',
+    ],
+    template: 'centredText',
+  },
+  {
+    h2: 'React ESLint rules rule',
+    image: ReactHookLint,
+  },
+  {
+    h2: 'React devtools are also very handy',
+    image: ReactDevTools,
+  },
+  {
+    h2: 'The React docs are a thing of beauty',
+    image: AllJavaScript,
+  },
 
   {
     template: 'end',
   },
 ]
 
-// <Slide title="Tips and Tricks" subtitle="Steel-toed boots for footgun protection." />
-// <Slide centred><strong style="font-size: 5rem;">Don't write React.</strong></Slide>
 // <Slide subtitle="React ESLint rules rule" image={ReactHookLint} />
 // <Slide subtitle="React devtools are also very handy" image={ReactDevTools} />
 
