@@ -82,3 +82,7 @@ export class SeededRandom {
     return array
   }
 }
+
+export function random(min: number, max: number) {
+  return min + Math.random() * (max - min)
+}

@@ -3,12 +3,14 @@ import type { Slide } from '$lib/slide'
 import Code from './Code.svelte'
 import Default from './Default.svelte'
 import IFrame from './IFrame.svelte'
+import ImageGrid from './ImageGrid.svelte'
 import Title from './Title.svelte'
 
 const templates = {
   code: Code,
   default: Default,
   iframe: IFrame,
+  imageGrid: ImageGrid,
   title: Title,
 } as const
 
@@ -21,6 +23,10 @@ export function resolveTemplate(slide: Slide) {
 
   if (slide.code) {
     return templates.code
+  }
+
+  if (slide.images && Array.isArray(slide.images)) {
+    return templates.imageGrid
   }
 
   return templates[slide.template ?? 'default'] ?? templates.default

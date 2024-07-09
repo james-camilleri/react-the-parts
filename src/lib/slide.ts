@@ -14,6 +14,7 @@ export interface Slide {
   notes?: string[]
   iframe?: string
   image?: string
+  images?: string | string[]
   // TODO: This might be a circular dependency.
   template?: TemplateName
 }
