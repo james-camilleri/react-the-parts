@@ -44,15 +44,18 @@ A short talk about React presented as part of the dev Show & Tell at SGX FX.
 ## References and Interesting Reads
 
 - https://www.zachleat.com/web/react-criticism/
+- https://joshcollinsworth.com/blog/antiquated-react
 - https://en.wikipedia.org/wiki/Browser_wars
+
 - https://www.pzuraq.com/blog/four-eras-of-javascript-frameworks
-- https://github.com/tc39/proposal-signals
-- https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e
+- https://primalskill.blog/a-brief-history-of-javascript-frameworks
+- https://www.swyx.io/js-third-age
+
+- https://react.dev/reference/rules/rules-of-hooks
 - https://www.swyx.io/hooks
+- https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e
+- https://jser.dev/2023-06-19-how-does-usestate-work/
 - https://jser.dev/react/2022/01/19/lifecycle-of-effect-hook/
 - https://github.com/acdlite/react-fiber-architecture
-- https://react.dev/reference/rules/rules-of-hooks
-- https://jser.dev/2023-06-19-how-does-usestate-work/
-- https://www.swyx.io/js-third-age
-- https://primalskill.blog/a-brief-history-of-javascript-frameworks
-- https://joshcollinsworth.com/blog/antiquated-react
+
+- https://github.com/tc39/proposal-signals

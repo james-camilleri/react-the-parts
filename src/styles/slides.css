@@ -8,7 +8,6 @@
   --react-blue: rgb(88 196 220);
   --light-blue: rgb(0 200 255);
   --dark-blue: rgb(11 109 145);
-  --secondary-orange: rgb(255 192 128);
 
   --title-margin: 2rem;
 }
@@ -65,6 +64,11 @@ h2 {
     background: var(--dark);
     opacity: 0.7;
   }
+}
+
+a,
+a:visited {
+  color: var(--dark-blue);
 }
 
 .slide {

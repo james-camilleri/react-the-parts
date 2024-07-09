@@ -319,7 +319,41 @@ const slides: Slide[] = [
   },
   {
     h2: 'The React docs are a thing of beauty',
-    image: AllJavaScript,
+    image: '',
+  },
+
+  {
+    h2: 'References, resources, and neat stuff',
+    text: [
+      '**These slides**',
+      'https://react-the-parts.slides.james.mt',
+      'https://github.com/james-camilleri/react-the-parts',
+      '',
+      '**JS Framework History**',
+      'https://en.wikipedia.org/wiki/Browser_wars',
+      'https://www.pzuraq.com/blog/four-eras-of-javascript-frameworks',
+      'https://primalskill.blog/a-brief-history-of-javascript-frameworks',
+      'https://www.swyx.io/js-third-age',
+    ],
+  },
+  {
+    h2: 'References, resources, and neat stuff',
+    text: [
+      '**Black magic behind hooks and rendering**',
+      'https://react.dev/reference/rules/rules-of-hooks',
+      'https://www.swyx.io/hooks',
+      'https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e',
+      'https://jser.dev/2023-06-19-how-does-usestate-work/',
+      'https://jser.dev/react/2022/01/19/lifecycle-of-effect-hook/',
+      'https://github.com/acdlite/react-fiber-architecture',
+      '',
+      "**Bitchin' about React**",
+      'https://www.zachleat.com/web/react-criticism/',
+      'https://joshcollinsworth.com/blog/antiquated-react',
+      '',
+      '**ECMA Proposal for in-browser Signals**',
+      'https://github.com/tc39/proposal-signals',
+    ],
   },
 
   {
