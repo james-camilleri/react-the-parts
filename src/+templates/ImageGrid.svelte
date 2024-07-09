@@ -32,6 +32,11 @@
     align-items: self-start;
   }
 
+  .h2-only {
+    top: 0;
+    margin-inline-start: 0;
+  }
+
   img {
     width: 30%;
     object-fit: contain;
