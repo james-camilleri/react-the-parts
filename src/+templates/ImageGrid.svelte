@@ -8,6 +8,7 @@
 
   let { h1, h2, image, images }: Slide = $props()
   let imageList = $derived(image ? [image] : Array.isArray(images) ? images : [images])
+  let width = $derived(Math.min(30, 100 / Math.floor(imageList.length / 2) - 5))
 </script>
 
 <div class="slide">
@@ -20,7 +21,7 @@
 
   <div class="grid">
     {#each imageList as image}
-      <img src={image} style:--delay="{random(0.2, 0.8)}s" />
+      <img src={image} style:--delay="{random(0.2, 0.8)}s" style:--width="{width}%" />
     {/each}
   </div>
 </div>
@@ -38,7 +39,8 @@
   }
 
   img {
-    width: 30%;
+    width: var(--width);
+    max-height: 30vh;
     object-fit: contain;
     transform: scale(0);
     animation: bounce 1s cubic-bezier(0.28, 0.84, 0.42, 1);
