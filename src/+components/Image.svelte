@@ -42,62 +42,30 @@
 </script>
 
 <div class="img-wrapper">
-  <div class="img-inner-wrapper" class:frame={imageFrame}>
-    <img src={image} class:frame={imageFrame} bind:this={imageElement} />
-    <div class="img-drop-shadow" class:frame={imageFrame}></div>
-  </div>
+  <img src={image} class:frame={imageFrame} bind:this={imageElement} />
 </div>
 
 <canvas bind:this={canvasElement} width="100" height="100"></canvas>
 
 <style>
   .img-wrapper {
+    position: relative;
     display: flex;
-    flex: 1;
+    flex: 1 1 0;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
-  }
-
-  .img-inner-wrapper {
-    position: relative;
-    flex: 0 1 0;
-    height: 90%;
-    max-height: 90%;
-  }
-
-  .img-drop-shadow {
-    &.frame,
-    &.frame::before {
-      position: absolute;
-      z-index: -1;
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    &.frame {
-      top: 0.6rem;
-      left: 0.6rem;
-      background: var(--light);
-    }
-
-    &.frame::before {
-      top: -0.3rem;
-      left: -0.3rem;
-      content: '';
-      background: var(--dark-blue);
-    }
+    min-height: 0;
   }
 
   img {
+    width: 100%;
     height: 100%;
     object-fit: contain;
 
     &.frame {
-      outline: solid var(--dark) 3px;
-      outline-offset: -2px;
+      filter: drop-shadow(0.3rem 0.3rem 0 var(--dark-blue))
+        drop-shadow(0.3rem 0.3rem 0 var(--light));
     }
   }
 
