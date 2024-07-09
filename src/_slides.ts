@@ -31,7 +31,7 @@ import SvelteKitLogo from '$assets/images/svelte-kit-logo.svg'
 
 const slides: Slide[] = [
   {
-    template: 'waiting',
+    template: 'start',
   },
   {
     h1: 'React: The ~~Good~~ Parts',
@@ -222,7 +222,19 @@ const slides: Slide[] = [
   },
   {
     image: HighlightJsxComment,
+    notes: [
+      'Side note: something I came across while I was trying to get syntax highlighting to work',
+    ],
+  },
+
+  {
+    template: 'end',
   },
 ]
+
+// <Slide title="Tips and Tricks" subtitle="Steel-toed boots for footgun protection." />
+// <Slide centred><strong style="font-size: 5rem;">Don't write React.</strong></Slide>
+// <Slide subtitle="React ESLint rules rule" image={ReactHookLint} />
+// <Slide subtitle="React devtools are also very handy" image={ReactDevTools} />
 
 export default slides

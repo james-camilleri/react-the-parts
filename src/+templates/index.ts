@@ -3,19 +3,21 @@ import type { Slide } from '$lib/slide'
 import Code from './Code.svelte'
 import Component from './Component.svelte'
 import Default from './Default.svelte'
+import End from './End.svelte'
 import IFrame from './IFrame.svelte'
 import ImageGrid from './ImageGrid.svelte'
+import Start from './Start.svelte'
 import Title from './Title.svelte'
-import Waiting from './Waiting.svelte'
 
 const templates = {
   code: Code,
   component: Component,
   default: Default,
+  end: End,
   iframe: IFrame,
   imageGrid: ImageGrid,
+  start: Start,
   title: Title,
-  waiting: Waiting,
 } as const
 
 export type TemplateName = keyof typeof templates

@@ -18,7 +18,6 @@
   .slide {
     display: flex;
     flex-direction: column;
-    align-items: self-start;
     align-items: center;
     background: var(--dark);
   }
