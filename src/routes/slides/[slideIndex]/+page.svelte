@@ -6,9 +6,8 @@
   import { quintOut } from 'svelte/easing'
   import { fade, scale } from 'svelte/transition'
 
-  import { goto } from '$app/navigation'
+  import { beforeNavigate, goto } from '$app/navigation'
   import { page } from '$app/stores'
-  // TODO: This file should probably be moved somewhere else, or rethought entirely.
   import { remote } from '$lib/remote.svelte'
 
   import Controls from '../../../+components/Controls.svelte'
@@ -103,6 +102,15 @@
     //   return previousSlide()
     // }
   }
+
+  // Capture nav link clicks and re-route to remote if active.
+  beforeNavigate(({ cancel, to, type }) => {
+    const slideIndex = to?.params?.slideIndex
+    if (remote.active && slideIndex && type === 'link') {
+      remote.send(Number(slideIndex))
+      cancel()
+    }
+  })
 </script>
 
 <svelte:window onkeydown={onKeyPress} onwheel={onMouseWheel} />
@@ -122,7 +130,6 @@
   </div>
 {/if}
 
-<!-- TODO: These currently clash with the remote because they update the URL directly. -->
 <div class="controls">
   <Controls baseUrl="/slides" currentSlide={data.slideIndex} lastSlide={slides.length - 1} />
 </div>

@@ -25,7 +25,7 @@
   useTask((delta) => {
     particles.forEach((particle) => {
       if (particle.position[2] < -20) {
-        particle.position[2] = 100
+        particle.position[2] = random(0, 2000)
       }
 
       particle.position[2] -= delta * 100
