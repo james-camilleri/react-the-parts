@@ -1,10 +1,15 @@
 import type { Slide } from '$lib/slide'
 
-import JQuerySample from '$assets/code/jquery-sample?raw'
+import JQuerySample from '$assets/code/jquery-sample.js?raw'
+import KnockoutComponent from '$assets/code/knockout-component.html?raw'
+import ReactComponent from '$assets/code/react-component.jsx?raw'
+import VueComponent from '$assets/code/vue-component.html?raw'
 import ReactLogo from '$assets/components/ReactLogo.svelte'
+import AllJavaScript from '$assets/images/all-javascript.jpg'
 import AngularJsLogo from '$assets/images/angular-js-logo.png'
 import BackboneJsLogo from '$assets/images/backbone-js-logo.png'
 import BrowserWars from '$assets/images/browser-wars.png'
+import HighlightJsxComment from '$assets/images/highlight-js-jsx-comment.png'
 import JavaScriptAndNetscape from '$assets/images/javascript+netscape.png'
 import JQuery from '$assets/images/jquery-logo.png'
 import KnockoutJsLogo from '$assets/images/knockout-js-logo.svg'
@@ -13,6 +18,9 @@ import SpaghettiAbomination1 from '$assets/images/spaghetti-abomination-1.jpg'
 import SpaghettiAbomination2 from '$assets/images/spaghetti-abomination-2.webp'
 
 const slides: Slide[] = [
+  {
+    template: 'waiting',
+  },
   {
     h1: 'React: The ~~Good~~ Parts',
     h2: 'An abbreviated and mostly-correct introduction to React for less front-end-inclined developers.',
@@ -141,6 +149,46 @@ const slides: Slide[] = [
       'Lots of stuff that used to be done in serverland with php or ASP or magic now done on the front-end.',
       'Client side apps became larger and larger and things got unwieldy.',
     ],
+  },
+
+  // Fundamental React concepts.
+  {
+    h1: 'How does one React?',
+    h2: 'Fundamental concepts in React.',
+  },
+  {
+    h2: 'Components',
+    text: '**Everything** is a component.',
+    notes: ['Earlier frameworks had "optional" components.', 'React was components or GTFO.'],
+  },
+  {
+    h2: 'JSX',
+    image: AllJavaScript,
+    notes: [
+      'Rather than over-specifying a template language, React went the whole hog and put everything in JavaScript.',
+      'Pros and cons. Very flexible, but quite a few trade-offs: property names, very JS-leaning.',
+    ],
+  },
+  {
+    code: {
+      source: KnockoutComponent,
+      language: 'html',
+    },
+  },
+  {
+    code: {
+      source: VueComponent,
+      language: 'html',
+    },
+  },
+  {
+    code: {
+      source: ReactComponent,
+      language: 'jsx',
+    },
+  },
+  {
+    image: HighlightJsxComment,
   },
 ]
 
