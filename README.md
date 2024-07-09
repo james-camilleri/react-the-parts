@@ -15,7 +15,7 @@ A short talk about React presented as part of the dev Show & Tell at SGX FX.
   - Frameworks emerging from the primordial JavaScript soup.
   - React.
   - New tools, new problems.
-  - Frameworks 2: Lots more Acronyms.
+  - Frameworks 3: Lots more Acronyms.
   - Side note: compiled vs runtime frameworks.
   - The framework development spiral.
   - New crazy stuff.
@@ -39,6 +39,7 @@ A short talk about React presented as part of the dev Show & Tell at SGX FX.
   - Don't write React.
   - The React dev tools.
   - Lint rules.
+  - Great documentation.
 
 ## References and Interesting Reads
 
