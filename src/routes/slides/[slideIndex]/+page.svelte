@@ -85,13 +85,13 @@
   }
 
   function onMouseWheel(e: WheelEvent) {
-    if (e.deltaY > 0) {
-      return nextSlide()
-    }
-
-    if (e.deltaY < 0) {
-      return previousSlide()
-    }
+    // Temporarily disabled because it's really screwing with scrollable code blocks.
+    // if (e.deltaY > 0) {
+    //   return nextSlide()
+    // }
+    // if (e.deltaY < 0) {
+    //   return previousSlide()
+    // }
   }
 </script>
 
