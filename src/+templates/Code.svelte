@@ -1,19 +1,20 @@
 <script lang="ts">
   import type { Slide } from '$lib/slide'
 
-  import hljs from 'highlight.js/lib/core'
-  import javascript from 'highlight.js/lib/languages/javascript'
-  import typescript from 'highlight.js/lib/languages/typescript'
+  import { codeToHtml } from 'shiki'
   import SvelteMarkdown from 'svelte-markdown'
 
   import '../styles/slides.css'
-  import '../styles/syntax-highlight.css'
-
-  hljs.registerLanguage('js', javascript)
-  hljs.registerLanguage('ts', typescript)
+  // import '../styles/syntax-highlight.css'
 
   let { h1, h2, code }: Slide = $props()
-  let formattedCode = $derived(hljs.highlight(code?.source, { language: code?.language }).value)
+  // let formattedCode = $derived(hljs.highlight(code?.source, { language: code?.language }).value)
+  let formattedCodePromise = $derived(
+    codeToHtml(code?.source ?? '', {
+      lang: code?.language ?? 'js',
+      theme: 'houston',
+    }),
+  )
 </script>
 
 <div class="slide">
@@ -25,7 +26,9 @@
   {/if}
 
   {#if code}
-    <pre><code>{@html formattedCode}</code></pre>
+    {#await formattedCodePromise then formattedCode}
+      {@html formattedCode}
+    {/await}
   {/if}
 </div>
 
@@ -41,10 +44,11 @@
     margin-inline-start: 0;
   }
 
-  pre {
+  :global(pre) {
     width: 100%;
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: var(--react-blue);
+    background-color: transparent !important;
   }
 </style>
