@@ -1,8 +1,14 @@
 import type { Slide } from '$lib/slide'
 
+import BrowserWars from '$assets/images/browser-wars.png'
+import JavaScriptAndNetscape from '$assets/images/javascript+netscape.png'
+import SirTimCreatesTheWeb from '$assets/images/sir-tim-creates-the-web.jpeg'
+
 const slides: Slide[] = [
   {
     h1: 'React: The ~~Good~~ Parts',
+    h2: 'An abbreviated and mostly-correct introduction to React for less front-end-inclined developers.',
+    template: 'title',
     notes: ['a note', 'another note', 'a note with *formatting*'],
   },
   {
@@ -45,6 +51,36 @@ const slides: Slide[] = [
         style: { 'margin-top': '1rem' },
       },
     ],
+  },
+  {
+    iframe: 'https://react.dev/',
+    notes: ['Show concept of components here.'],
+  },
+
+  // The age of JavaScript frameworks.
+  {
+    h1: 'Why do we need React?',
+    h2: 'A minor digression into the development of front-end frameworks.',
+  },
+  {
+    h2: 'In the beginning',
+    image: SirTimCreatesTheWeb,
+  },
+  {
+    iframe: 'https://www.spacejam.com/1996/',
+    notes: [
+      'OG Space Jame website, still running on 1996 tech.',
+      "Some of you weren't even born when they built this.",
+      'Completely static.',
+    ],
+  },
+  {
+    h2: 'Then this happened...',
+    image: JavaScriptAndNetscape,
+  },
+  {
+    h2: 'The dark ages',
+    image: BrowserWars,
   },
 ]
 
