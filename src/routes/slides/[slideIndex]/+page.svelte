@@ -122,6 +122,7 @@
   </div>
 {/if}
 
+<!-- TODO: These currently clash with the remote because they update the URL directly. -->
 <div class="controls">
   <Controls baseUrl="/slides" currentSlide={data.slideIndex} lastSlide={slides.length - 1} />
 </div>
