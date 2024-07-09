@@ -5,6 +5,7 @@ import LoopingWithJsx from '$assets/code/jsx-looping-through-components.jsx?raw'
 import KnockoutComponent from '$assets/code/knockout-component.html?raw'
 import ReactClassComponent from '$assets/code/react-class-component.jsx?raw'
 import ReactFunctionalComponent from '$assets/code/react-components.jsx?raw'
+import ReactForm from '$assets/code/react-form.jsx?raw'
 import VueComponent from '$assets/code/vue-component.html?raw'
 import ReactLogo from '$assets/components/ReactLogo.svelte'
 import AllJavaScript from '$assets/images/all-javascript.jpg'
@@ -13,7 +14,7 @@ import AstroLogo from '$assets/images/astro-logo.png'
 import BackboneJsLogo from '$assets/images/backbone-js-logo.png'
 import BrowserWars from '$assets/images/browser-wars.png'
 import CircleVsSpiral from '$assets/images/circle-vs-spiral.png'
-import ComponentTree from '$assets/images/component-tree.webp'
+import ComponentTree from '$assets/images/component-tree.png'
 import HighlightJsxComment from '$assets/images/highlight-js-jsx-comment.png'
 import JavaScriptAndNetscape from '$assets/images/javascript+netscape.png'
 import JQuery from '$assets/images/jquery-logo.png'
@@ -24,6 +25,7 @@ import QwikLogo from '$assets/images/qwik-logo.svg'
 import ReactComponentOutline from '$assets/images/react-component-outline.png'
 import ReactDevTools from '$assets/images/react-dev-tools.png'
 import ReactHookLint from '$assets/images/react-hook-lint.png'
+import VirtualDom from '$assets/images/react-vdom.webp'
 import RemixLogo from '$assets/images/remix-logo.svg'
 import SignalsLogo from '$assets/images/signals-logo.svg'
 import SirTimCreatesTheWeb from '$assets/images/sir-tim-creates-the-web.jpeg'
@@ -34,6 +36,7 @@ import SpaghettiAbomination2 from '$assets/images/spaghetti-abomination-2.webp'
 import SSG from '$assets/images/ssg.svg'
 import SSR from '$assets/images/ssr.svg'
 import SvelteKitLogo from '$assets/images/svelte-kit-logo.svg'
+import Waterfall from '$assets/images/waterfall.gif'
 
 const slides: Slide[] = [
   {
@@ -256,6 +259,36 @@ const slides: Slide[] = [
   {
     iframe: 'https://react.dev/learn/writing-markup-with-jsx#3-camelcase-salls-most-of-the-things',
     notes: ['Weird JSX things'],
+  },
+
+  {
+    h2: 'Unidirectional data flow',
+    // https://dribbble.com/shots/2126205-Waterfall
+    image: Waterfall,
+    notes: [
+      'Many other frameworks implement two-way data binding (e.g. in inputs).',
+      'React team found this was prone to bugs when they designed React, although how accurate this is today is questionable.',
+    ],
+  },
+  {
+    h2: 'Controlled inputs',
+    code: {
+      source: ReactForm,
+      language: 'jsx',
+    },
+  },
+
+  {
+    h2: 'The Virtual DOM',
+    image: VirtualDom,
+    notes: [
+      'Power of the virtual DOM is that it is separate from a concrete DOM implementation: this is why React can be used in browsers or as React Native.',
+      "The React reconciler is called Fiber, and it's big and clever.",
+    ],
+  },
+  {
+    h2: 'Component tree = VDOM',
+    image: ComponentTree,
   },
 
   // Tips & tricks.

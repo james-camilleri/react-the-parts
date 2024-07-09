@@ -50,7 +50,7 @@ A short talk about React presented as part of the dev Show & Tell at SGX FX.
 - https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e
 - https://www.swyx.io/hooks
 - https://jser.dev/react/2022/01/19/lifecycle-of-effect-hook/
-- https://github.com/acdlite/react-fiber-architecture#what-is-a-fiber
+- https://github.com/acdlite/react-fiber-architecture
 - https://react.dev/reference/rules/rules-of-hooks
 - https://jser.dev/2023-06-19-how-does-usestate-work/
 - https://www.swyx.io/js-third-age
