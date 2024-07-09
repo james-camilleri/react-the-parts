@@ -2,24 +2,15 @@
   import type { PageData } from './$types'
 
   import { qr } from '@svelte-put/qr/svg'
-  import {
-    backIn,
-    bounceIn,
-    cubicIn,
-    cubicOut,
-    elasticIn,
-    quadIn,
-    quintIn,
-    quintOut,
-    sineIn,
-  } from 'svelte/easing'
-  import { fade, blur, fly, slide, scale, crossfade } from 'svelte/transition'
+  import { quintOut } from 'svelte/easing'
+  import { fade, scale } from 'svelte/transition'
 
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
   // TODO: This file should probably be moved somewhere else, or rethought entirely.
   import { remote } from '$lib/remote.svelte'
 
+  import Controls from '../../../+components/Controls.svelte'
   import Background from '../../../+components/_background_svelte_5/Background.svelte'
   import { resolveTemplate } from '../../../+templates'
   import slides from '../../../_slides'
@@ -112,6 +103,10 @@
   </div>
 {/if}
 
+<div class="controls">
+  <Controls baseUrl="/slides" currentSlide={data.slideIndex} lastSlide={slides.length - 1} />
+</div>
+
 {#key data.slideIndex}
   <div in:scale out:fade={{ easing: quintOut }}>
     <svelte:component this={resolveTemplate(currentSlide)} {...currentSlide} />
@@ -128,6 +123,13 @@
 </div>
 
 <style>
+  .controls {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 10;
+  }
+
   .overlay {
     position: fixed;
     top: 0;
