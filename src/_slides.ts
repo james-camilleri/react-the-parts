@@ -6,6 +6,8 @@ import KnockoutComponent from '$assets/code/knockout-component.html?raw'
 import ReactClassComponent from '$assets/code/react-class-component.jsx?raw'
 import ReactFunctionalComponent from '$assets/code/react-components.jsx?raw'
 import ReactForm from '$assets/code/react-form.jsx?raw'
+import UseEffect from '$assets/code/use-effect.jsx?raw'
+import UseState from '$assets/code/use-state.jsx?raw'
 import VueComponent from '$assets/code/vue-component.html?raw'
 import ReactLogo from '$assets/components/ReactLogo.svelte'
 import AllJavaScript from '$assets/images/all-javascript.jpg'
@@ -15,6 +17,8 @@ import BackboneJsLogo from '$assets/images/backbone-js-logo.png'
 import BrowserWars from '$assets/images/browser-wars.png'
 import CircleVsSpiral from '$assets/images/circle-vs-spiral.png'
 import ComponentTree from '$assets/images/component-tree.png'
+import CssModulesLogo from '$assets/images/css-modules-logo.png'
+import EmotionJsLogo from '$assets/images/emotion-logo.png'
 import HighlightJsxComment from '$assets/images/highlight-js-jsx-comment.png'
 import JavaScriptAndNetscape from '$assets/images/javascript+netscape.png'
 import JQuery from '$assets/images/jquery-logo.png'
@@ -25,6 +29,7 @@ import QwikLogo from '$assets/images/qwik-logo.svg'
 import ReactComponentOutline from '$assets/images/react-component-outline.png'
 import ReactDevTools from '$assets/images/react-dev-tools.png'
 import ReactHookLint from '$assets/images/react-hook-lint.png'
+import ReactHook from '$assets/images/react-hook.jpg'
 import VirtualDom from '$assets/images/react-vdom.webp'
 import RemixLogo from '$assets/images/remix-logo.svg'
 import SignalsLogo from '$assets/images/signals-logo.svg'
@@ -35,8 +40,10 @@ import SpaghettiAbomination1 from '$assets/images/spaghetti-abomination-1.jpg'
 import SpaghettiAbomination2 from '$assets/images/spaghetti-abomination-2.webp'
 import SSG from '$assets/images/ssg.svg'
 import SSR from '$assets/images/ssr.svg'
+import StyledComponentsLogo from '$assets/images/styled-components-logo.svg'
 import SvelteKitLogo from '$assets/images/svelte-kit-logo.svg'
 import Waterfall from '$assets/images/waterfall.gif'
+import YoureOnYourOwn from '$assets/images/youre-on-your-own.png'
 
 const slides: Slide[] = [
   {
@@ -291,6 +298,58 @@ const slides: Slide[] = [
     image: ComponentTree,
   },
 
+  {
+    h2: 'Hooks',
+    image: ReactHook,
+  },
+  {
+    h2: 'Hooks',
+    text: [
+      {
+        text: '**How do you store state in a pure (?) function?**',
+        style: { 'font-size': '2rem', 'padding-bottom': '2rem' },
+      },
+      {
+        text: '~~A big ball of hidden global variables and closures.~~',
+      },
+      {
+        text: 'Hooks!',
+        style: { 'font-size': '1.5rem' },
+      },
+    ],
+    template: 'centredText',
+  },
+  {
+    iframe: 'https://react.dev/reference/rules/rules-of-hooks',
+  },
+  {
+    h2: 'useState',
+    code: {
+      source: UseState,
+      language: 'jsx',
+    },
+  },
+  {
+    h2: 'useEffect',
+    code: {
+      source: UseEffect,
+      language: 'jsx',
+    },
+  },
+
+  {
+    h2: 'Styling',
+    image: YoureOnYourOwn,
+  },
+  {
+    h2: 'Solving the scoping problem',
+    images: [CssModulesLogo, EmotionJsLogo, StyledComponentsLogo],
+    notes: [
+      'Lots of frameworks have a system for handling styles, this is one of the bigger issues with React.',
+      'Vue and Svelte do scoped styles out of the box in SFCs.',
+    ],
+  },
+
   // Tips & tricks.
   {
     h1: 'Tips and Tricks',
@@ -299,11 +358,8 @@ const slides: Slide[] = [
   {
     text: [
       {
-        text: "Don't write React.",
-        style: {
-          'font-size': '2.5rem',
-          'font-weight': 'bold',
-        },
+        text: "**Don't write React.**",
+        style: { 'font-size': '2.5rem' },
       },
       '(ha ha)',
     ],
