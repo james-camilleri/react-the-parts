@@ -83,7 +83,7 @@
       const { presentationId, secret } = remote.host(data.slideIndex, slides.length)
       remote.onReceive(updateSlideUrl)
 
-      remoteConnectUrl = `https://${$page.url.host}/present/${presentationId}?secret=${secret}`
+      remoteConnectUrl = `https://${$page.url.host}/remote/${presentationId}?secret=${secret}`
       // TODO: Hide QR code once phone connects.
       showRemoteQrCode = true
     }
