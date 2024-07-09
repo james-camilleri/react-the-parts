@@ -7,15 +7,27 @@ import VueComponent from '$assets/code/vue-component.html?raw'
 import ReactLogo from '$assets/components/ReactLogo.svelte'
 import AllJavaScript from '$assets/images/all-javascript.jpg'
 import AngularJsLogo from '$assets/images/angular-js-logo.png'
+import AstroLogo from '$assets/images/astro-logo.png'
 import BackboneJsLogo from '$assets/images/backbone-js-logo.png'
 import BrowserWars from '$assets/images/browser-wars.png'
+import CircleVsSpiral from '$assets/images/circle-vs-spiral.png'
 import HighlightJsxComment from '$assets/images/highlight-js-jsx-comment.png'
 import JavaScriptAndNetscape from '$assets/images/javascript+netscape.png'
 import JQuery from '$assets/images/jquery-logo.png'
 import KnockoutJsLogo from '$assets/images/knockout-js-logo.svg'
+import MPA from '$assets/images/mpa.svg'
+import NuxtLogo from '$assets/images/nuxt-logo.svg'
+import QwikLogo from '$assets/images/qwik-logo.svg'
+import RemixLogo from '$assets/images/remix-logo.svg'
+import SignalsLogo from '$assets/images/signals-logo.svg'
 import SirTimCreatesTheWeb from '$assets/images/sir-tim-creates-the-web.jpeg'
+import SolidStartLogo from '$assets/images/solid-start-logo.svg'
+import SPA from '$assets/images/spa.svg'
 import SpaghettiAbomination1 from '$assets/images/spaghetti-abomination-1.jpg'
 import SpaghettiAbomination2 from '$assets/images/spaghetti-abomination-2.webp'
+import SSG from '$assets/images/ssg.svg'
+import SSR from '$assets/images/ssr.svg'
+import SvelteKitLogo from '$assets/images/svelte-kit-logo.svg'
 
 const slides: Slide[] = [
   {
@@ -148,6 +160,27 @@ const slides: Slide[] = [
     notes: [
       'Lots of stuff that used to be done in serverland with php or ASP or magic now done on the front-end.',
       'Client side apps became larger and larger and things got unwieldy.',
+    ],
+  },
+  {
+    h2: 'Frameworks 3.0, now with Acronyms',
+    images: [SSR, SvelteKitLogo, MPA, NuxtLogo, RemixLogo, SPA, SolidStartLogo, SSG],
+    notes: [
+      'The third wave of frameworks are more full-stack, and try to fix some of the problems their predecessors created with acronyms.',
+    ],
+  },
+  {
+    h2: 'Right back to where we started from?',
+    image: CircleVsSpiral,
+  },
+  {
+    h2: 'Crazy new stuff',
+    images: [AstroLogo, QwikLogo, SignalsLogo],
+    notes: [
+      'Insane new stuff in the pipeline.',
+      'Astro popularised "Islands" architecture.',
+      'Signals are a new reactive primitive based on the ideas introduced by KnockoutJs.',
+      'Qwik is doing insane stuff with loading *everything* dynamically/asynchronously.',
     ],
   },
 
