@@ -6,6 +6,7 @@ import Default from './Default.svelte'
 import IFrame from './IFrame.svelte'
 import ImageGrid from './ImageGrid.svelte'
 import Title from './Title.svelte'
+import Waiting from './Waiting.svelte'
 
 const templates = {
   code: Code,
@@ -14,6 +15,7 @@ const templates = {
   iframe: IFrame,
   imageGrid: ImageGrid,
   title: Title,
+  waiting: Waiting,
 } as const
 
 export type TemplateName = keyof typeof templates
