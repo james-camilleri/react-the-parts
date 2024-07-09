@@ -1,12 +1,14 @@
 :root {
   --white: rgb(255 255 255);
   --light: rgb(240 240 255);
+  --grey: rgb(100 100 110);
   --black: rgb(0 0 0);
   --dark: rgb(20 20 20);
 
   --react-blue: rgb(88 196 220);
   --light-blue: rgb(0 200 255);
   --dark-blue: rgb(11 109 145);
+  --secondary-orange: rgb(255 192 128);
 
   --title-margin: 2rem;
 }
@@ -70,13 +72,6 @@ h2 {
   width: 100vw;
   height: 100vh;
   padding: 4rem;
-}
-
-code {
-  font-family: 'fira code', monospace;
-  font-feature-settings: 'calt';
-  font-variant-ligatures: contextual;
-  color: var(--dark-blue);
 }
 
 @font-face {

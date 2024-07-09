@@ -7,7 +7,10 @@ export interface Slide {
   h1?: string
   h2?: string
   text?: Text | Text[]
-  code?: string
+  code?: {
+    source: string
+    language: 'js' | 'ts'
+  }
   notes?: string[]
   iframe?: string
   image?: string
