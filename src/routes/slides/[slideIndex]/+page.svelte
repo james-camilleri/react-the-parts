@@ -2,6 +2,7 @@
   import type { PageData } from './$types'
 
   import { qr } from '@svelte-put/qr/svg'
+  import { onMount } from 'svelte'
   import { quintOut } from 'svelte/easing'
   import { fade, scale } from 'svelte/transition'
 
@@ -14,6 +15,24 @@
   import Background from '../../../+components/_background_svelte_5/Background.svelte'
   import { resolveTemplate } from '../../../+templates'
   import slides from '../../../_slides'
+
+  const imageUrls = slides.reduce((imageUrls, slide) => {
+    const { image, images } = slide
+    if (image) {
+      imageUrls.push(image)
+    }
+
+    if (images) {
+      imageUrls.push(...(Array.isArray(images) ? images : [images]))
+    }
+
+    return imageUrls
+  }, [] as string[])
+
+  // Prefetch image URLs for caching.
+  onMount(() => {
+    imageUrls.map((url) => fetch(url))
+  })
 
   let { data }: { data: PageData } = $props()
   let currentSlide = $derived(slides[data.slideIndex])
