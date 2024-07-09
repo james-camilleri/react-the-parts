@@ -51,4 +51,11 @@
     scrollbar-color: var(--react-blue);
     background-color: transparent !important;
   }
+
+  :global(code) {
+    font-family: 'fira code', monospace;
+    font-size: 0.8rem;
+    font-feature-settings: 'calt';
+    font-variant-ligatures: contextual;
+  }
 </style>
