@@ -1,22 +1,21 @@
 <script lang="ts">
-  import { T } from '@threlte/core'
+  import { T, useTask } from '@threlte/core'
   import { tweened } from 'svelte/motion'
 
   import { SeededRandom } from '$lib/random'
 
   import Shape from './Shape.svelte'
 
-  export let dark: boolean
-  export let random: SeededRandom | undefined
+  let { dark, random }: { dark: boolean; random: SeededRandom | undefined } = $props()
 
-  let shapes = [
+  let shapes = $state([
     {
       distance: tweened(7, { duration: 1000 }),
       angle: tweened(5, { duration: 1000 }),
       rotationSpeedX: tweened(1),
       rotationSpeedY: tweened(0.5),
       rotationSpeedZ: tweened(0.1),
-      geometry: T.BoxGeometry
+      geometry: T.BoxGeometry,
     },
     {
       distance: tweened(2, { duration: 700 }),
@@ -24,7 +23,7 @@
       rotationSpeedX: tweened(0.8),
       rotationSpeedY: tweened(2),
       rotationSpeedZ: tweened(1.1),
-      geometry: T.DodecahedronGeometry
+      geometry: T.DodecahedronGeometry,
     },
     {
       distance: tweened(9, { duration: 1500 }),
@@ -32,11 +31,11 @@
       rotationSpeedX: tweened(1),
       rotationSpeedY: tweened(0.2),
       rotationSpeedZ: tweened(0.8),
-      geometry: T.TetrahedronGeometry
-    }
-  ]
+      geometry: T.TetrahedronGeometry,
+    },
+  ])
 
-  $: {
+  $effect(() => {
     shapes.forEach((shape) => {
       if (!random) {
         return
@@ -51,15 +50,13 @@
       shape.rotationSpeedY.set(random.numberBetween(0, 2) + speedModifier)
       shape.rotationSpeedZ.set(random.numberBetween(0, 2) + speedModifier)
     })
-
-    shapes = shapes
-  }
+  })
 </script>
 
 <T.PerspectiveCamera
   makeDefault
   position={[0, 0, -30]}
-  on:create={({ ref }) => {
+  oncreate={({ ref }) => {
     ref.lookAt(0, 0, 0)
   }}
 />

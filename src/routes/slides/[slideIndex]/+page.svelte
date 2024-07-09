@@ -12,7 +12,7 @@
   import { remote } from '$lib/remote.svelte'
 
   import Controls from '../../../+components/Controls.svelte'
-  import Background from '../../../+components/_background_svelte_5/Background.svelte'
+  import Background from '../../../+components/background/Background.svelte'
   import { resolveTemplate } from '../../../+templates'
   import slides from '../../../_slides'
 

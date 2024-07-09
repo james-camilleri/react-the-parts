@@ -3,16 +3,25 @@
 
   import { T, useTask } from '@threlte/core'
 
-  export let distance: Tweened<number>
-  export let angle: Tweened<number>
-  export let rotationSpeedX: Tweened<number>
-  export let rotationSpeedY: Tweened<number>
-  export let rotationSpeedZ: Tweened<number>
-  export let geometry:
-    | typeof T.BoxGeometry
-    | typeof T.DodecahedronGeometry
-    | typeof T.TetrahedronGeometry
-  export let dark: boolean
+  interface ShapeProps {
+    dark: boolean
+    distance: Tweened<number>
+    angle: Tweened<number>
+    rotationSpeedX: Tweened<number>
+    rotationSpeedY: Tweened<number>
+    rotationSpeedZ: Tweened<number>
+    geometry: typeof T.BoxGeometry | typeof T.DodecahedronGeometry | typeof T.TetrahedronGeometry
+  }
+
+  let {
+    distance,
+    angle,
+    rotationSpeedX,
+    rotationSpeedY,
+    rotationSpeedZ,
+    // geometry,
+    dark,
+  }: ShapeProps = $props()
 
   function toCartesian(radius: number, theta: number) {
     return { x: radius * Math.cos(theta), y: radius * Math.sin(theta) }
@@ -22,15 +31,12 @@
     return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1)
   }
 
-  let x: number
-  let y: number
-  $: ({ x, y } = toCartesian($distance, $angle))
+  let rotationX = $state(0)
+  let rotationY = $state(0)
+  let rotationZ = $state(0)
 
-  $: colour = dark ? '#aaaaaa' : '#ffffff'
-
-  let rotationX = 0
-  let rotationY = 0
-  let rotationZ = 0
+  let { x, y } = $derived(toCartesian($distance, $angle))
+  let colour = $derived(dark ? '#aaaaaa' : '#ffffff')
 
   useTask((delta) => {
     rotationX += delta * $rotationSpeedX
@@ -48,7 +54,9 @@
   rotation.y={rotationY}
   rotation.z={rotationZ}
 >
-  <svelte:component this={geometry} />
+  <T.TetrahedronGeometry />
+  <!-- TODO: This binding doesn't work. -->
+  <!-- <svelte:component this={geometry} /> -->
   <T.MeshStandardMaterial wireframe color="#fff" />
 </T.Mesh>
 
@@ -61,6 +69,7 @@
   rotation.y={rotationY}
   rotation.z={rotationZ}
 >
-  <svelte:component this={geometry} />
+  <T.TetrahedronGeometry />
+  <!-- TODO: This binding doesn't work. -->
   <T.MeshStandardMaterial color={colour} />
 </T.Mesh>

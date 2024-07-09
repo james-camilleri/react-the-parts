@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { Slide } from '$lib/slide'
+
   import { Canvas } from '@threlte/core'
 
   import { SeededRandom } from '$lib/random'
@@ -6,27 +8,29 @@
   import Particles from './Particles.svelte'
   import Shapes from './Shapes.svelte'
 
-  export let currentSlideIndex: number
-  export let code: string | undefined = undefined
-  export let h1: string | undefined = undefined
-  export let h2: string | undefined = undefined
+  interface BackgroundProps extends Slide {
+    currentSlideIndex: number
+  }
 
+  let { currentSlideIndex, code, h1, h2 }: BackgroundProps = $props()
+
+  // Hide the background shapes for these slides.
+  const HIDE_SHAPES = new Set<number>([])
+
+  const NO_OF_RAYS = 23
+  const RAY_WIDTH = 1.5
   const NO_OF_CIRCLES = 20
   const INNER_RADIUS = 50
   const CIRCLES = Array(NO_OF_CIRCLES)
     .fill(INNER_RADIUS)
     .map((radius, i) => radius * (i + 1) ** ((i + 1) / 10))
 
-  const NO_OF_RAYS = 23
-  const RAY_WIDTH = 1.5
-
-  // Hide the background shapes for these slides.
-  const HIDE_SHAPES = new Set<number>([])
-
   const svgSize = NO_OF_CIRCLES * INNER_RADIUS
 
-  $: dark = !!code
-  $: random = new SeededRandom([currentSlideIndex, h1 ?? '', h2 ?? '', code ?? ''].join(''))
+  let dark = $derived(!!code)
+  let random = $derived(
+    new SeededRandom([currentSlideIndex, h1 ?? '', h2 ?? '', code ?? ''].join('')),
+  )
 </script>
 
 <div class="background" class:dark>
@@ -55,13 +59,12 @@
     {/each}
   </svg>
 
-  <!-- TODO: This is blowing up horrifically. -->
-  <!-- <div class="canvas" class:hidden={currentSlideIndex && HIDE_SHAPES.has(currentSlideIndex)}>
+  <div class="canvas" class:hidden={currentSlideIndex && HIDE_SHAPES.has(currentSlideIndex)}>
     <Canvas>
       <Shapes {dark} {random} />
       <Particles />
     </Canvas>
-  </div> -->
+  </div>
 </div>
 
 <style lang="css">

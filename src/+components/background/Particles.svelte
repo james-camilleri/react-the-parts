@@ -13,12 +13,14 @@
     return min + Math.random() * (max - min)
   }
 
-  let particles: Particle[] = Array(PARTICLE_COUNT)
-    .fill(0)
-    .map(() => ({
-      target: [0, 0, 0],
-      position: [random(-10, 10), random(-10, 10), random(0, 1500)]
-    }))
+  let particles: Particle[] = $state(
+    Array(PARTICLE_COUNT)
+      .fill(0)
+      .map(() => ({
+        target: [0, 0, 0],
+        position: [random(-10, 10), random(-10, 10), random(0, 2000)],
+      })),
+  )
 
   useTask((delta) => {
     particles.forEach((particle) => {
@@ -35,7 +37,6 @@
 <InstancedMesh limit={PARTICLE_COUNT} range={PARTICLE_COUNT}>
   <T.SphereGeometry args={[0.03]} />
   <T.MeshStandardMaterial colour="#00c8ff" />
-  <!-- <FakeGlowMaterial glowColor="red" /> -->
 
   {#each particles as particle}
     <Instance position={particle.position} scale={[0.1, 0.1, 100]} />
