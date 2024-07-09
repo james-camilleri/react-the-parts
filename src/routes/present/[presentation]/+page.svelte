@@ -68,6 +68,7 @@
   .notes {
     padding: 1rem 2rem;
     font-family: sans-serif;
+    font-size: 2rem;
     color: var(--interface-light);
     background: var(--interface-dark);
   }
