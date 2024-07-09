@@ -1,5 +1,6 @@
 import type { Slide } from '$lib/slide'
 
+import CentredText from './CentredText.svelte'
 import Code from './Code.svelte'
 import Component from './Component.svelte'
 import Default from './Default.svelte'
@@ -10,6 +11,7 @@ import Start from './Start.svelte'
 import Title from './Title.svelte'
 
 const templates = {
+  centredText: CentredText,
   code: Code,
   component: Component,
   default: Default,
