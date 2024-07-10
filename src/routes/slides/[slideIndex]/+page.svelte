@@ -11,6 +11,7 @@
   import { remote } from '$lib/remote.svelte'
 
   import Controls from '../../../+components/Controls.svelte'
+  import Timer from '../../../+components/Timer.svelte'
   import Background from '../../../+components/background/Background.svelte'
   import { resolveTemplate } from '../../../+templates'
   import slides from '../../../_slides'
@@ -38,6 +39,7 @@
 
   let remoteConnectUrl = $state('')
   let showRemoteQrCode = $state(false)
+  let timerStartTime: number | undefined = $state()
 
   function updateSlideUrl(index: number) {
     goto(`/slides/${index}`)
@@ -91,6 +93,10 @@
     if (e.key === 'Escape') {
       showRemoteQrCode = false
     }
+
+    if (e.key === 't' && !timerStartTime) {
+      timerStartTime = Date.now()
+    }
   }
 
   function onMouseWheel(e: WheelEvent) {
@@ -130,6 +136,10 @@
   </div>
 {/if}
 
+<div class="timer">
+  <Timer startTime={timerStartTime} />
+</div>
+
 <div class="controls">
   <Controls baseUrl="/slides" currentSlide={data.slideIndex} lastSlide={slides.length - 1} />
 </div>
@@ -150,6 +160,13 @@
 </div>
 
 <style>
+  .timer {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 10;
+  }
+
   .controls {
     position: fixed;
     right: 1rem;
