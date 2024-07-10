@@ -196,7 +196,7 @@ const slides: Slide[] = [
   },
   {
     h2: 'Crazy new stuff',
-    images: [AstroLogo, QwikLogo, SignalsLogo],
+    images: [AstroLogo, SignalsLogo, QwikLogo],
     notes: [
       'Insane new stuff in the pipeline.',
       'Astro popularised "Islands" architecture.',
