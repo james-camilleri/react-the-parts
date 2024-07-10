@@ -1,11 +1,14 @@
 import type { Slide } from '$lib/slide'
 
+import ArrayProps1 from '$assets/code/array-props-1.jsx?raw'
+import ArrayProps2 from '$assets/code/array-props-2.jsx?raw'
 import JQuerySample from '$assets/code/jquery-sample.js?raw'
 import LoopingWithJsx from '$assets/code/jsx-looping-through-components.jsx?raw'
 import KnockoutComponent from '$assets/code/knockout-component.html?raw'
 import ReactClassComponent from '$assets/code/react-class-component.jsx?raw'
 import ReactFunctionalComponent from '$assets/code/react-components.jsx?raw'
 import ReactForm from '$assets/code/react-form.jsx?raw'
+import UseEffectMutation from '$assets/code/use-effect-mutation.jsx?raw'
 import UseEffect from '$assets/code/use-effect.jsx?raw'
 import UseState from '$assets/code/use-state.jsx?raw'
 import VueComponent from '$assets/code/vue-component.html?raw'
@@ -28,6 +31,7 @@ import NuxtLogo from '$assets/images/nuxt-logo.svg'
 import QwikLogo from '$assets/images/qwik-logo.svg'
 import ReactComponentOutline from '$assets/images/react-component-outline.png'
 import ReactDevTools from '$assets/images/react-dev-tools.png'
+import ReactDocs from '$assets/images/react-docs.jpg'
 import ReactHookLint from '$assets/images/react-hook-lint.png'
 import ReactHook from '$assets/images/react-hook.jpg'
 import VirtualDom from '$assets/images/react-vdom.webp'
@@ -40,6 +44,7 @@ import SpaghettiAbomination1 from '$assets/images/spaghetti-abomination-1.jpg'
 import SpaghettiAbomination2 from '$assets/images/spaghetti-abomination-2.webp'
 import SSG from '$assets/images/ssg.svg'
 import SSR from '$assets/images/ssr.svg'
+import StrictMode from '$assets/images/strict-mode.png'
 import StyledComponentsLogo from '$assets/images/styled-components-logo.svg'
 import SvelteKitLogo from '$assets/images/svelte-kit-logo.svg'
 import Waterfall from '$assets/images/waterfall.gif'
@@ -350,9 +355,44 @@ const slides: Slide[] = [
     ],
   },
 
-  // Tips & tricks.
+  // Common gotchas.
   {
-    h1: 'Tips and Tricks',
+    h1: 'Common Gotchas',
+    h2: "That's a feature, not a bug.",
+  },
+  {
+    h2: 'Two main kinds of issues',
+    text: ["Why isn't this updating?", 'Why is this updating so much?'],
+  },
+  {
+    h2: 'Referential equality',
+    code: {
+      source: UseEffectMutation,
+      language: 'jsx',
+    },
+  },
+  {
+    h2: 'Strict Mode',
+    image: StrictMode,
+  },
+  {
+    h2: 'Referential equality, again',
+    code: {
+      source: ArrayProps1,
+      language: 'jsx',
+    },
+  },
+  {
+    h2: 'Referential equality, again',
+    code: {
+      source: ArrayProps2,
+      language: 'jsx',
+    },
+  },
+
+  // Tips & tools.
+  {
+    h1: 'Tips & Tools',
     h2: 'Steel-toed boots for footgun protection.',
   },
   {
@@ -375,7 +415,7 @@ const slides: Slide[] = [
   },
   {
     h2: 'The React docs are a thing of beauty',
-    image: '',
+    image: ReactDocs,
   },
 
   {
