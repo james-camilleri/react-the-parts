@@ -442,6 +442,13 @@ const slides: Slide[] = [
       'https://jser.dev/2023-06-19-how-does-usestate-work/',
       'https://jser.dev/react/2022/01/19/lifecycle-of-effect-hook/',
       'https://github.com/acdlite/react-fiber-architecture',
+    ],
+  },
+  {
+    h2: 'References, resources, and neat stuff',
+    text: [
+      '**The React Documentary**',
+      'https://youtu.be/8pDqJVdNa44?si=aL-byqjTWeqXIBij',
       '',
       "**Bitchin' about React**",
       'https://www.zachleat.com/web/react-criticism/',
